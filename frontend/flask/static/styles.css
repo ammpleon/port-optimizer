@@ -1,0 +1,7 @@
+body{
+    background: aquamarine;
+}
+
+div +  .parent-params{
+    font-size: larger;
+}

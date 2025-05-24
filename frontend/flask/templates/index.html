@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "/frontend/flask/static" rel="stylesheet">
+    <title>Modern Portfolio Optimizer</title>
+</head>
+<body>
+    <center><h1>Modern Portfolio Theory Optimizer</h1></center>
+
+
+    <form method = "GET">
+        <fieldset class = "fieldset-1">
+    
+            <legend class = "parent-params">Portfolio Parameters</legend>
+                <div>
+                    <label for="tickers"> Tickers:</label>
+                    <input type = "search" id = "tickers" name = "tickers" placeholder="Exxon Mobil" required>
+                    <button class  = "add">Add</button>
+                </div>
+
+                <div>
+                    <label for="tickers-list">Selected Tickers:</label>
+                    <input type="text" name="tickers-list" id="tickers-list" placeholder="Exxon Mobil">
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="start-date"> Start Date:</label>
+                    <input type="date" id = "start-date">
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="end-date"> End Date:</label> 
+                    <input type = "date" end-date = "end-date">
+                </div>
+
+                <br>
+
+                <div> 
+                    <label for="rf-rate"> Risk-Free Rate (%): </label>
+                    <input type="number" id = "rf-rate" name = "rf-rate" placeholder="1.0">
+                    <div>
+                        <b><em>The Risk Free rate is the return on investment with no financial risk.
+                            It acts as a benchmark for comparing other investments. 
+                            It is often used to assess if higher returns justify higher risks.
+                        </em></b>
+                    </div>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="simulations">Number of Simualtions:</label>
+                    <select id = "simulations" name = "simulations">
+                        <option value="1000">1000</option>
+                        <option value="3000">3000</option>
+                        <option value="5000">5000</option>
+                        <option value="6000">6000</option>
+                        <option value="8000">8000</option>
+                        <option value="10000">10000</option>
+                    </select>
+
+                    <div>
+                        <b><em>
+                            The number of simulations required to model a probability of different outcomes
+                            in a process that cannot easily be predicted due to the intervention of random variables.
+                        </em></b>
+                    </div>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="email-input">Email:</label>
+                    <input id = "email-input" type="email" name = "email-input">
+                    <b>
+                        <em>
+                            <div>For mailing your results</div>
+                        </em>
+                    </b>
+                </div>
+
+                <br>
+
+                <div>
+                    <button type = "submit" class = "optimize">Optimize Portfolio</button>
+                    <button type = "reset" class  = "reset-btn">Reset</button>
+                </div>
+        
+        </fieldset>
+</form>
+
+<fieldset class = "fieldset-2">
+    <legend>Results</legend>
+
+</fieldset>
+
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPT Portfolio Optimizer</title>
+    <!-- Bootstrap CSS for styling -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Plotly.js for interactive charts -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Modern Portfolio Theory Optimizer</h1>
+        
+        <!-- Section 1: Input Controls -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h3>Portfolio Parameters</h3>
+            </div>
+            <div class="card-body">
+                <form id="optimizer-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="tickers" class="form-label">Stock Tickers (comma-separated):</label>
+                            <input type="text" class="form-control" id="tickers" value="AAPL,MSFT,GOOG,AMZN,TSLA" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="start-date" class="form-label">Start Date:</label>
+                            <input type="date" class="form-control" id="start-date" value="2020-01-01">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="end-date" class="form-label">End Date:</label>
+                            <input type="date" class="form-control" id="end-date" value="2023-12-31">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-4">
+                            <label for="risk-free-rate" class="form-label">Risk-Free Rate (%):</label>
+                            <input type="number" class="form-control" id="risk-free-rate" step="0.1" value="2.5">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="num-portfolios" class="form-label">Simulated Portfolios:</label>
+                            <input type="number" class="form-control" id="num-portfolios" value="10000">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Optimize Portfolio</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Section 2: Efficient Frontier Chart -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h3>Efficient Frontier</h3>
+            </div>
+            <div class="card-body">
+                <div id="efficient-frontier-plot"></div>
+            </div>
+        </div>
+
+        <!-- Section 3: Optimization Results -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Optimal Portfolio</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Stock</th>
+                                    <th>Weight</th>
+                                </tr>
+                            </thead>
+                            <tbody id="optimal-weights">
+                                <!-- Filled dynamically by JavaScript -->
+                            </tbody>
+                        </table>
+                        <div class="mt-2">
+                            <strong>Expected Return:</strong> <span id="optimal-return">-</span><br>
+                            <strong>Volatility:</strong> <span id="optimal-volatility">-</span><br>
+                            <strong>Sharpe Ratio:</strong> <span id="optimal-sharpe">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Monte Carlo Simulation</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="monte-carlo-plot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery + Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
