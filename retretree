@@ -1,0 +1,7 @@
+TREASURY_API_KEY=802b7806b74b56166b494d10a42a01c5
+
+
+host=localhost
+port=5432
+password=76512389
+user=postgres
